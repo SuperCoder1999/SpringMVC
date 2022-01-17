@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
     <h1>首页</h1>
+    <a th:href="@{/user/success}">RequestMapping用在类上</a> <br/>
+    <a th:href="@{/test}">value其中一个请求"/test"</a> <br/>
+    <a th:href="@{/testRequestMapping}">value其中一个请求"/testRequestMapping"</a> <br/>
+    <form th:action="@{/test}" method="post">
+        <input type="submit">测试不加method属性时,post请求是否也可以
+    </form>
+    <form th:action="@{/method}" method="post">
+        <input type="submit">测试method属性定义为get时,post请求的报错情况
+    </form>
+    <form th:action="@{/GetMapping}" method="post">
+        <input type="submit">测试method属性定义为get时,post请求的报错情况
+    </form>
+
+    <!--<a th:href="@{/params?username=root&password=123&local=beijing}">测试params参数匹配</a>-->
+    <a th:href="@{/params(username='root',password=123,local='beijing')}">测试params参数匹配,thmeleaf语法</a> <br/>
+    <a th:href="@{/params(username='root',local='beijing')}">测试params参数匹配,thmeleaf语法.没有password,因为password!=1234
+        我想看看,没有会不会报错 :答案是 可以的
+    </a> <br/>
+
+    <a th:href="@{/headers}">测试headers参数</a>
 </body>
 </html>
