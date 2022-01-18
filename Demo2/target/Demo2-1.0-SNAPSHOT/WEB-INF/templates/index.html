@@ -25,6 +25,15 @@
         我想看看,没有会不会报错 :答案是 可以的
     </a> <br/>
 
-    <a th:href="@{/headers}">测试headers参数</a>
+    <a th:href="@{/headers}">测试headers参数</a> <br/>
+
+    <a th:href="@{/a1a/testAnt}">测试@RequestMapping可以匹配ant风格的路径-->使用?</a><br>
+    <a th:href="@{/a1a/testAnt}">测试@RequestMapping可以匹配ant风格的路径-->使用*</a><br>
+    <a th:href="@{/a1a/testAnt}">测试@RequestMapping可以匹配ant风格的路径-->使用**</a><br>
+
+    <a th:href="@{/testPath/1/admin(password=123)}">测试@RequestMapping支持路径中的占位符-->{/testPath/1/admin(password=123)},其中
+    层数后面的参数不会被当作最后一层的参数</a><br>
+    <a th:href="@{/testPath/1/admin/123}">测试@RequestMapping支持路径中的占位符-->/testPath/1/admin/123没有参加的那一层,不能写</a><br>
+    <a th:href="@{/testPath/1/admin}">测试@RequestMapping支持路径中的占位符-->/testPath/1/admin</a><br>
 </body>
 </html>

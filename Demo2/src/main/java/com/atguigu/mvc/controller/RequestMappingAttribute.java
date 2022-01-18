@@ -2,6 +2,7 @@ package com.atguigu.mvc.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -50,6 +51,25 @@ public class RequestMappingAttribute {
     //headers={"Host!=localhost:8080"} 报错404
     headers={"Host=localhost:8080"})
     public String headers() {
+        return "success";
+    }
+
+    /**
+     * value值支持ant风格的路径
+     */
+    //@RequestMapping("/a?a/testAnt")
+    //@RequestMapping("/a*a/testAnt")
+    @RequestMapping("/**/testAnt")
+    public String testAnt(){
+        return "success";
+    }
+
+    /**
+     * 路径中的占位符,用于获取参数(参数不再用?连接,而是通过一层层路径获取)
+     */
+    @RequestMapping("/testPath/{id}/{username}")
+    public String testPath(@PathVariable("id")Integer id, @PathVariable("username") String username){
+        System.out.println("id:"+id+",username:"+username);
         return "success";
     }
 }

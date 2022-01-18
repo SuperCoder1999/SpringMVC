@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="htttp:www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>测试请求参数</h1>
+<a th:href="@{/testServletAPI(username='admin',password=123456)}">测试使用servletAPI获取请求参数</a><br>
+
+<a th:href="@{/testParam(username='admin',password=123456)}">
+    测试使用控制方法的具体形参获取请求参数(如果没有传入控制器方法的形参是否报错,答案不会,只会赋值为null)</a><br>
+<form th:action="@{/testParam}" method="get">
+    用户名：<input type="text" name="username"><br>
+    密码：<input type="password" name="password"><br>
+    爱好：<input type="checkbox" name="hobby" value="a">a
+    <input type="checkbox" name="hobby" value="b">b
+    <input type="checkbox" name="hobby" value="c">c<br>
+    <input type="submit" value="测试使用控制方法的形参获取请求参数,一个参数名对应多个值">
+</form>
+
+<form th:action="@{/testParam2}" method="get">
+    用户名：<input type="text" name="user_name"><br>
+    密码：<input type="password" name="password"><br>
+    爱好：<input type="checkbox" name="hobby" value="a">a
+    <input type="checkbox" name="hobby" value="b">b
+    <input type="checkbox" name="hobby" value="c">c<br>
+    <input type="submit" value="测试使用控制方法的形参获取请求参数,用RequestParam注解匹配请求参数">
+</form>
+
+<a th:href="@{/testHeader}">控制方法的形参获取请求头Header</a><br>
+
+<a th:href="@{/createCookie}">创建cookie</a><br>
+<a th:href="@{/testCookie}">控制方法的形参获取Cookie</a><br>
+
+<form th:action="@{/testBean}" method="post">
+    用户名：<input type="text" name="username"><br>
+    密码：<input type="password" name="password"><br>
+    性别：<input type="radio" name="sex" value="男">男<input type="radio" name="sex" value="女">女<br>
+    年龄：<input type="text" name="age"><br>
+    邮箱：<input type="text" name="email"><br>
+    <input type="submit" value="使用实体类接收请求参数,直接封装成对象实例">
+</form>
+</body>
+</html>
