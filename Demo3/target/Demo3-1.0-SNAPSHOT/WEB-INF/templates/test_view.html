@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <a th:href="@{/testThymeleafView}">测试ThymeleafView</a><br>
+    <a th:href="@{/testForward}">测试InternalResourceView-转发到其他请求:/testThymeleafView</a><br>
+    <a th:href="@{/testRedirect}">测试RedirectView-重定向到其他请求:/testThymeleafView</a><br>
+    <a th:href="@{/testRedirectUrl}">测试RedirectView-重定向到外部资源-百度</a><br>
+</body>
+</html>

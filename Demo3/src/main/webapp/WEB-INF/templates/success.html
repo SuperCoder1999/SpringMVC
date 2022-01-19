@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    $('body').append(location.search);
+</script>
+    <h1>success</h1>
+    <!--   idea中对于thymeleaf读取request的语法报错,但是可以使用 -->
+    1. ServletAPI存入的数据,读取出来:<p th:text="${RequestScope}"></p> <br/>
+    2. ModelAndView存入的数据,读取出来:<p th:text="${testRequestScopeByModelAndView}"></p> <br/>
+    3. Model存入的数据,读取出来:<p th:text="${RequestScopeByModel}"></p> <br/>
+    4. Map存入的数据,读取出来:<p th:text="${RequestScopeByMap}"></p> <br/>
+    5. ModelMap存入的数据,读取出来:<p th:text="${RequestScopeByModelMap}"></p> <br/> <br/>
+
+   原生ServletAPI存入session的数据,读取出来:<p th:text="${session.SessionScope}"></p> <br/> <br/>
+
+    原生ServletAPI存入ServletContext的数据,读取出来:<p th:text="${application.application}"></p> <br/> <br/>
+</body>
+</html>
