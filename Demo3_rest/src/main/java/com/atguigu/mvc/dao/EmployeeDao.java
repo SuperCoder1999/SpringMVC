@@ -1,11 +1,13 @@
 package com.atguigu.mvc.dao;
 
 import com.atguigu.mvc.bean.Employee;
+import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+@Repository
 public class EmployeeDao {
     private static Map<Integer, Employee> employees = null;
     static{
