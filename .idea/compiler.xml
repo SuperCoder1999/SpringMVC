@@ -10,6 +10,7 @@
         <module name="Demo2" />
         <module name="Demo1" />
         <module name="Demo3" />
+        <module name="Demo3_rest" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -17,6 +18,7 @@
       <module name="Demo2" target="1.5" />
       <module name="Demo3" target="1.5" />
       <module name="Demo3_jsp" target="1.5" />
+      <module name="Demo3_rest" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

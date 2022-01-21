@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/Demo2/Demo2.iml" filepath="$PROJECT_DIR$/Demo2/Demo2.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo3/Demo3.iml" filepath="$PROJECT_DIR$/Demo3/Demo3.iml" />
       <module fileurl="file://$PROJECT_DIR$/Demo3_jsp/Demo3_jsp.iml" filepath="$PROJECT_DIR$/Demo3_jsp/Demo3_jsp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo3_rest/Demo3_rest.iml" filepath="$PROJECT_DIR$/Demo3_rest/Demo3_rest.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVC.iml" filepath="$PROJECT_DIR$/SpringMVC.iml" />
     </modules>
   </component>
