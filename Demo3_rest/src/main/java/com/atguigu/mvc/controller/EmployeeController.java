@@ -20,7 +20,6 @@ public class EmployeeController {
     @RequestMapping(value="/employee", method= RequestMethod.GET)
     public String getAllEmployee(Model model) {
         Collection<Employee> employeeList = employeeDao.getAll();
-        System.out.println("123");
         model.addAttribute("employeeList", employeeList);
         return "employee_list";
     }
@@ -29,6 +28,25 @@ public class EmployeeController {
     public String deleteEmployee(@PathVariable("id") Integer id) {
         System.out.println("delete");
         employeeDao.delete(id);
+        return "redirect:/employee";
+    }
+
+    @RequestMapping(value="/employee", method=RequestMethod.POST)
+    public String addEmployee(Employee employee) {
+        employeeDao.save(employee);
+        return "redirect:/employee";
+    }
+
+    @RequestMapping(value="/employee/{id}", method=RequestMethod.GET)
+    public String getEmployeeById(@PathVariable("id") Integer id, Model model) {
+        Employee employee = employeeDao.get(id);
+        model.addAttribute("employee", employee);
+        return "employee_update";
+    }
+
+    @RequestMapping(value="/employee", method=RequestMethod.PUT)
+    public String updateEmployee(Employee employee) {
+        employeeDao.save(employee);
         return "redirect:/employee";
     }
 }
